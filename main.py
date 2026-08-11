@@ -98,11 +98,5 @@ async def analisar_lote_planilha(file: UploadFile = File(...)):
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Erro ao processar o arquivo: {str(e)}")
 
-if __name__ == "__main__":
-    import uvicorn
-    import os
-    # O Render define automaticamente a variável de ambiente PORT
-    porta = int(os.environ.get("PORT", 8000))
-    # Vincula o host a 0.0.0.0 para ser acessível externamente
-    uvicorn.run("main:app", host="0.0.0.0", port=porta)
+
 
